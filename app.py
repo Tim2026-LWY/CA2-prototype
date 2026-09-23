@@ -28,10 +28,6 @@ def load_and_train():
     )
     model = LinearRegression()
     model.fit(X_train, y_train)
-    import numpy as np
-    print("是否存在空值?", pd.DataFrame(X_train).isna().any().any())
-    print("是否存在无穷值?", np.isinf(X_train).any().any())
-
     return df, model, list(model.feature_names_in_)
 
 df, model, model_columns = load_and_train()
